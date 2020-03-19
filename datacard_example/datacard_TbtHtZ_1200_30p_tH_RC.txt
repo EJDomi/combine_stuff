@@ -1,0 +1,43 @@
+----------------------------------------------------------------------------------------------------------------------------------
+imax 1 number of bins
+jmax 3 number of processes minus 1
+kmax * number of nuisance parameters
+----------------------------------------------------------------------------------------------------------------------------------
+shapes data_obs          RC  workspaces/workspaces_tH_scaled_137_15Oct19_smoothed.root w:MTP_regionC_data_obs
+shapes TbtHtZ1200_30p    RC  workspaces/workspaces_tH_scaled_137_15Oct19_smoothed.root w:MTP_regionC_TbtHtZ_1200_30p_LH w:MTP_regionC_TbtHtZ_1200_30p_LH_$SYSTEMATIC
+shapes TTJets            RC  workspaces/workspaces_tH_scaled_137_15Oct19_smoothed.root w:MTP_regionC_TTJets w:MTP_regionC_TTJets_$SYSTEMATIC
+shapes Other             RC  workspaces/workspaces_tH_scaled_137_15Oct19_smoothed.root w:MTP_regionC_Other w:MTP_regionC_Other_$SYSTEMATIC
+shapes QCD               RC  workspaces/workspaces_tH_scaled_137_15Oct19_smoothed.root w:pdf_regionC_QCD w:pdf_regionC_QCD_$SYSTEMATIC
+----------------------------------------------------------------------------------------------------------------------------------
+bin                RC      
+observation        -1.0    
+----------------------------------------------------------------------------------------------------------------------------------
+bin                RC                RC              RC            RC           
+process            TbtHtZ1200_30p      TTJets            Other           QCD          
+process            0                   1                 2               3             
+rate               -1                  -1                -1              1.00        
+------------------------------------------------------------------------------------
+lumi_had           lnN    1.025        1.025             1.025           -
+purewt             lnN    1.046         1.046              1.046            -
+pdfrewt            lnN    1.010        1.010             1.010           -
+topxsec            lnN    -            1.061             -               -
+wxsec              lnN    -            -                 1.038           -
+higgsShowerSf      lnN    1.10         1.10              1.10            -
+t21Sf              lnN    1.125        1.125             1.125           -
+higgstagmassJES    lnN    1.02         1.02              1.02            -
+toptagmassJES      lnN    1.02         1.02              1.02            -
+ShapeTTJets        shape  -            1.0               -               -            
+ShapeOther         shape  -            -                 1.0             -            
+ShapeQCD           shape  -            -                 -               1.0          
+bc                 shape  1.0          1.0               1.0             -            
+l                  shape  1.0          1.0               1.0             -            
+ttag               shape  1.0          1.0               1.0             -            
+mufr               shape  1.0          1.0               1.0             -            
+JES_had            shape  1.0          1.0               1.0             -            
+JER_had            shape  1.0          1.0               1.0             -            
+JMR               shape   1.0         1.0               1.0             -           
+ABCDrate param 1.0 0.6 
+
+----------------------------------------------------------------------------------------------------------------------------------
+QCD_tH_RC_norm rateParam RC QCD 1
+----------------------------------------------------------------------------------------------------------------------------------
